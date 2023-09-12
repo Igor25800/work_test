@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {delay, map, Observable, tap} from "rxjs";
+import {delay, map, Observable} from "rxjs";
 import {EmailInterface} from "../interfaces/email.interface";
 import {ValidationErrors} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
