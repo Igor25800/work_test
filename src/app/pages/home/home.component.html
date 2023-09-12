@@ -1,0 +1,11 @@
+<app-form-person
+  [formPerson]="formPerson"
+  [arrayFramework]="arrayFramework"
+  [arrayFrameworkVersion]="arrayFrameworkVersion"
+  (eventAddHobby)="addHobby()"
+  (eventCreatePerson)="createPerson($event)"
+></app-form-person>
+
+<ng-container *ngIf="person">
+    <p>{{person | json}}</p>
+</ng-container>

@@ -1,0 +1,50 @@
+.container {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+
+  .title {
+    text-align: center;
+  }
+
+  .form_block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .example-full-width {
+    width: 45%;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  .block_hobby {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .btn_hobby {
+      margin-bottom: 3rem;
+
+      .material-icons {
+        cursor: pointer;
+        font-size: 4rem;
+        color: rgb(255, 0, 0);
+      }
+    }
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

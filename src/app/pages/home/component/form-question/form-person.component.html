@@ -1,0 +1,61 @@
+<div class="container" [formGroup]="formPerson">
+  <h1 class="title">Form</h1>
+  <div class="form_block">
+    <mat-form-field class="example-full-width">
+      <mat-label>FirstName</mat-label>
+      <input matInput formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>LastName</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+  </div>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Framework</mat-label>
+    <mat-select formControlName="framework">
+      <mat-option *ngFor="let item of arrayFramework" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Framework Version</mat-label>
+    <mat-select formControlName="frameworkVersion"  >
+      <mat-option *ngFor="let item of arrayFrameworkVersion[framework]" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email">
+  </mat-form-field>
+  <h1>Hobby</h1>
+  <ng-container formArrayName="hobby">
+    <div class="form_block" *ngFor="let hobby of hobbyArray.controls; let i = index" [formGroupName]="i">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Duration</mat-label>
+        <input matInput formControlName="duration">
+      </mat-form-field>
+    </div>
+  </ng-container>
+  <div class="block_hobby">
+    <div class="btn_hobby">
+      <span class="material-icons" (click)="addHobby()"> add_circle </span>
+    </div>
+  </div>
+  <div>
+    <button [disabled]="!formPerson.valid"  mat-raised-button color="primary" class="btn" (click)="createPerson()">Create</button>
+  </div>
+</div>
